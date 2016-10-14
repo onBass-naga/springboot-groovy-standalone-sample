@@ -2,12 +2,10 @@ package com.example
 
 import com.example.app.Frontend
 import org.springframework.boot.SpringApplication
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration
+import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.ApplicationContext
-import org.springframework.context.annotation.Import
 
-@EnableAutoConfiguration
-@Import(AppConfig.class)
+@SpringBootApplication
 class Hajiboot2BApplication {
 
 	static void main(String[] args) {
