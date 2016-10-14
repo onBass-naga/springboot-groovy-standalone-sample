@@ -1,5 +1,7 @@
 package com.example
 
+import com.example.app.Argument
+import com.example.app.ArgumentResolver
 import com.example.app.Calculator
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
@@ -14,13 +16,12 @@ class Hajiboot2BApplication {
 		ApplicationContext context = SpringApplication.run(
 				Hajiboot2BApplication, args)
 
-		Scanner scanner = new Scanner(System.in)
+		ArgumentResolver resolver = context.getBean(ArgumentResolver.class)
 		print("Enter 2 numbers like a b : ")
-		int a = scanner.nextInt()
-		int b = scanner.nextInt()
+		Argument argument = resolver.resolve(System.in)
 
 		Calculator calculator = context.getBean(Calculator.class)
-		int result = calculator.calc(a, b)
+		int result = calculator.calc(argument.a, argument.b)
 
 		println("result = ${result}")
 	}
