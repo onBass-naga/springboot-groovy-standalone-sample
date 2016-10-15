@@ -10,12 +10,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.jdbc.core.namedparam.SqlParameterSource
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert
 import org.springframework.stereotype.Repository
-import org.springframework.transaction.annotation.Transactional
 
 import javax.annotation.PostConstruct
 
 @Repository
-@Transactional
 class CustomerRepository {
 
     @Autowired
