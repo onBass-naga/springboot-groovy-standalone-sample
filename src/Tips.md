@@ -32,3 +32,14 @@ spring.datasource.initialize=false
 ### トランザクション制御について
 
 `@Transactional` は実行時例外が発生した場合はロールバックされるが、 ***チェック例外*** の場合は ***ロールバックされない*** 。
+
+
+### JPAについて
+
+スキーマ生成したくない場合
+
+```
+spring.jpa.hibernate.ddl-auto=none
+```
+
+nativeQuery 使用時は `Pageable` を使用できない
